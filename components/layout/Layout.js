@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
   const chooseBackgorund = (path) => {
     switch (path) {
       case "/contact":
-        return "./Vizualisation/kuchnia1pP.jpg";
+        return "./Vizualisation/kuchnia2p.jpg";
       default:
         return "";
     }
@@ -67,6 +67,7 @@ const Layout = ({ children }) => {
               />
             </Link>
             </InstaWrapper>
+            
           </HeaderColumn>
         </Header>
         <Container

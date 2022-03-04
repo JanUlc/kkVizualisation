@@ -1,15 +1,37 @@
 import {  Wrapper, ColWrapper, TextOnImage } from "../../styles/Projects.styles";
 import Image from "next/image";
 import { useState } from "react";
+import { request } from "../../lib/datocms";
+import Link from "next/link";
+
+const PROJECT_QUERY = `{
+    allProjects
+    {
+     id,
+    title,
+    description,
+    images
+      {
+      url
+    }
+  }
+}`;
+
+export async function getStaticProps() {
+  const data = await request({
+    query: PROJECT_QUERY,
+  });
+  return {
+    props: { data },
+  };
+}
 
 
-export default function Projects() {
+export default function Projects({data}) {
 
 const shouldBlur = (id) => {
-  console.log(id, 'Statement false');
     if(activeColumn === 0) {
       return false;
-  
     };
   return id !== activeColumn ? true : false;
 }
@@ -18,26 +40,15 @@ const [activeColumn, setActiveColumn] = useState(0);
 
   return (
     <Wrapper>
-       <ColWrapper onMouseEnter={() => setActiveColumn(1)} blured={shouldBlur(1)} onMouseLeave={() => setActiveColumn(0)}>
-        <Image src={'/Vizualisation/kuchnia1pP.jpg'} height={'1200px'} width={'600px'} objectFit="cover"/>
-        <TextOnImage>Dzidzia</TextOnImage>
+      {data.allProjects.map(({ id, title,  images = null }, index) => (
+        <Link href={`/projects/${encodeURIComponent(id)}`}>
+        <ColWrapper onMouseEnter={() => setActiveColumn(index)} blured={shouldBlur(index)} onMouseLeave={() => setActiveColumn(0)}>
+        <Image src={images[0].url} height={'1200px'} width={'600px'} objectFit="cover" />
+        <TextOnImage>{title}</TextOnImage>
        </ ColWrapper>
-       <ColWrapper onMouseEnter={() => setActiveColumn(2)} blured={shouldBlur(2)} onMouseLeave={() => setActiveColumn(0)}>
-        <Image src={'/Vizualisation/lazienka1.png'} height={'1200px'} width={'600px'} objectFit="cover" />
-        <TextOnImage>Dzidzia</TextOnImage>
-       </ ColWrapper>
-       <ColWrapper onMouseEnter={() => setActiveColumn(3)} blured={shouldBlur(3)} onMouseLeave={() => setActiveColumn(0)}>
-        <Image src={'/Vizualisation/dzidzia1p.jpg'} height={'1200px'} width={'600px'} objectFit="cover" />
-        <TextOnImage>Dzidzia</TextOnImage>
-       </ ColWrapper>
-       <ColWrapper onMouseEnter={() => setActiveColumn(4)} blured={shouldBlur(4)} onMouseLeave={() => setActiveColumn(0)}> 
-        <Image src={'/Vizualisation/lazienkaParter1.jpg'} height={'1200px'} width={'600px'} objectFit="cover" />
-        <TextOnImage>Dzidzia</TextOnImage>
-       </ ColWrapper>
-       <ColWrapper onMouseEnter={() => setActiveColumn(5)} blured={shouldBlur(5)} onMouseLeave={() => setActiveColumn(0)}>
-        <Image src={'/Vizualisation/lazienkaPietro1.jpg'} height={'1200px'} width={'600px'} objectFit="cover" />
-        <TextOnImage>Dzidzia</TextOnImage>
-       </ ColWrapper>
+       </ Link>
+      ))
+      }
     </Wrapper>
   );
 }
