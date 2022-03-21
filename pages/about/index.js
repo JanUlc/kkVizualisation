@@ -1,20 +1,42 @@
 import { MainContent } from "../../components/layout/Layout.styles";
+import { LogoWrapper, TextWrapper, Wrapper } from "../../styles/About.styles";
+import Image from "next/image";
+import { request } from "../../lib/datocms";
 
+export const ABOUT_QUERY = `
+{
+    about {
+      description,
+      logo{
+        url
+      }
+    }
+}
+`;
 
-export default function About() {
+export async function getStaticProps() {
+  const data = await request({
+    query: ABOUT_QUERY,
+  });
+  return {
+    props: { data },
+  };
+}
+
+export default function About({ data }) {
   return (
-    <MainContent>
-      <h1>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. In pellentesque
-        massa placerat duis ultricies lacus sed. Quis viverra nibh cras pulvinar
-        mattis nunc. At tellus at urna condimentum mattis pellentesque. Leo urna
-        molestie at elementum eu. Pulvinar mattis nunc sed blandit libero
-        volutpat sed cras. Tortor posuere ac ut consequat semper viverra nam
-        libero justo. Et netus et malesuada fames ac turpis egestas maecenas
-        pharetra. Pharetra pharetra massa massa ultricies mi quis. Est lorem
-        ipsum dolor sit amet consectetur adipiscing.
-      </h1>
-    </MainContent>
+    <Wrapper>
+      <TextWrapper>
+        <h1>{data.about.description}</h1>
+      </TextWrapper>
+      <LogoWrapper>
+        <Image
+          src={data.about.logo.url}
+          width="1000px"
+          height="1000px"
+          objectFit="cover"
+        />
+      </LogoWrapper>
+    </Wrapper>
   );
 }

@@ -5,22 +5,28 @@ export const Wrapper = styled.main`
 min-height: 100vh;
 display: flex;
 flex-direction: column;
-background: black;
 `
 
-export const Container = styled.div.attrs({ id: 'page-wrap' })`
-background-image: url('${props => props.background}');
+export const BackgorundWrapper = styled.div`
+flex: 1;
+background-image: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8883928571428571) 80%), url('${props => props.background}');
 background-position: center;
+`
+
+
+export const Container = styled.div.attrs({ id: 'page-wrap' })`
 flex: 1;
 transform: scale(${({openMenu}) => openMenu ? '0.7' : '1'});
 transition: transform 700ms ease;
-filter: blur(${({openMenu}) => openMenu ? '0.5em' : '0em' })
+filter: blur(${({openMenu}) => openMenu ? '0.5em' : '0em' });
 `
 
 export const MainContent = styled.div`
-max-width: 1440px;
+display: flex;
+max-width: 1440px; 
 flex: 1;
 margin: 0 auto;
+flex-direction: row;
 `;
 
 export const Header = styled.header`

@@ -7,7 +7,8 @@ padding: 1em 0;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
-width: 196vh;
+width: 100vw;
+height: 70vh;
 margin: 2em 0;
 @media only screen and (max-width: 425px) {
   flex-direction: column;
@@ -16,7 +17,8 @@ margin: 2em 0;
 export const ColWrapper = styled.div`
 position: relative;
 display: flex;
-width: 250px;
+width: 18vw;
+height: 70vh;
 padding: 0em 0.5em;
 margin: 0 0.5em;
 transition: all .3s ease-in-out;

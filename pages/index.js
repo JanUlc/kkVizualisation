@@ -30,32 +30,21 @@ export async function getStaticProps() {
 }
 
 const Home = ({ data }) => {
-
-console.log(data.home.images.url)
+  console.log(data.home.images.url);
 
   return (
     <Wrapper>
       <ImageWrapper>
         <ImageContent style={{ width: "70%" }}>
           <DemoCarousel>
-            <Image
-              src={data.home.images.[0].url}
-              width="1800px"
-              height="900px"
-              objectFit="cover"
-            />
-            <Image
-              src={data.home.images.[1].url}
-              width="1800px"
-              height="900px"
-              objectFit="cover"
-            />
-            <Image
-              src={data.home.images.[2].url}
-              width="1800px"
-              height="900px"
-              objectFit="cover"
-            />
+            {data.home.images.map(({url}) => (
+              <Image
+                src={url}
+                width={"1800px"}
+                height={"900px"}
+                objectFit="cover"
+              />
+            ))}
           </DemoCarousel>
         </ImageContent>
       </ImageWrapper>

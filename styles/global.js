@@ -20,13 +20,6 @@ export const GlobalStyles = createGlobalStyle`
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Plaster";
-  src: url("/fonts/Plaster/Plaster-Regular.ttf");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
   html, body {
     margin: 0;
     padding: 0;

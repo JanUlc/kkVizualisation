@@ -5,22 +5,23 @@ export const WrapperForm = styled.form`
   flex-direction: column;
   height: 25em;
   max-width: 16.5em;
-  backdrop-filter: blur(1em);
   align-items: center;
   padding: 0.7em 0.7em;
   border: 0.15em solid white;
   margin: 4em 0em 0em 25em;
+  backdrop-filter: blur(1em);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.5);
 `;
 
 export const Button = styled.button`
   font-size: 1em;
   background: transparent;
-  background-color: black;
-  opacity: 50%;
+
   border: 0.15em solid white;
   
   :hover {
     background-color: white;
+    opacity: 30%;
     color: black;
     cursor: pointer;
   }

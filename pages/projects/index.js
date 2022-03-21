@@ -4,7 +4,7 @@ import { useState } from "react";
 import { request } from "../../lib/datocms";
 import Link from "next/link";
 
-const PROJECT_QUERY = `{
+export const PROJECT_QUERY = `{
     allProjects
     {
      id,
@@ -30,19 +30,19 @@ export async function getStaticProps() {
 export default function Projects({data}) {
 
 const shouldBlur = (id) => {
-    if(activeColumn === 0) {
+    if(activeColumn === 5) {
       return false;
     };
   return id !== activeColumn ? true : false;
 }
 
-const [activeColumn, setActiveColumn] = useState(0);
+const [activeColumn, setActiveColumn] = useState(5);
 
   return (
     <Wrapper>
-      {data.allProjects.map(({ id, title,  images = null }, index) => (
+      {data.allProjects.reverse().map(({ id, title,  images = null }, index) => (
         <Link href={`/projects/${encodeURIComponent(id)}`}>
-        <ColWrapper onMouseEnter={() => setActiveColumn(index)} blured={shouldBlur(index)} onMouseLeave={() => setActiveColumn(0)}>
+        <ColWrapper onMouseEnter={() => setActiveColumn(index)} blured={shouldBlur(index)} onMouseLeave={() => setActiveColumn(5)}>
         <Image src={images[0].url} height={'1200px'} width={'600px'} objectFit="cover" />
         <TextOnImage>{title}</TextOnImage>
        </ ColWrapper>

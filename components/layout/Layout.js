@@ -7,6 +7,7 @@ import {
   Logo,
   InstaBtn,
   InstaWrapper,
+  BackgorundWrapper,
 } from "./Layout.styles";
 import Footer from "../footer/Footer";
 import Image from "next/image";
@@ -26,7 +27,7 @@ const Layout = ({ children }) => {
   const chooseBackgorund = (path) => {
     switch (path) {
       case "/contact":
-        return "./Vizualisation/kuchnia2p.jpg";
+        return "./Vizualisation/kuchnia2p.jpg";     
       default:
         return "";
     }
@@ -38,45 +39,43 @@ const Layout = ({ children }) => {
   return (
     <>
       <Wrapper>
-        <Header>
-          <HeaderColumn>
-            <div ref={node}>
-              <Burger openMenu={openMenu} setOpenMenu={setOpenMenu} />
-              <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
-            </div>
-          </HeaderColumn>
-          <HeaderColumn justify="center">
-            <Logo>
-              <InAnimated>
-                <Link id="logo" href="/">
-                  <Image src="/Logo/K-221.svg" width={60} height={60} />
-                </Link>
-              </InAnimated>
-            </Logo>
-          </HeaderColumn>
-          <HeaderColumn justify="flex-end">
-            <InstaWrapper>
-            <Link
-              id="InstaButton"
-              href="https://www.instagram.com/kk.visualization/"
-              passHref
-            >
-              <ButtonHover
-                url={"/Icons/Insta.svg"}
-                hoverUrl={"/Icons/Insta_kol.svg"}
-              />
-            </Link>
-            </InstaWrapper>
-            
-          </HeaderColumn>
-        </Header>
-        <Container
+        <BackgorundWrapper
           background={chooseBackgorund(router.pathname)}
-          openMenu={openMenu}
         >
-          {children}
-        </Container>
-        <Footer></Footer>
+          <Header>
+            <HeaderColumn>
+              <div ref={node}>
+                <Burger openMenu={openMenu} setOpenMenu={setOpenMenu} />
+                <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+              </div>
+            </HeaderColumn>
+            <HeaderColumn justify="center">
+              <Logo>
+                <InAnimated>
+                  <Link id="logo" href="/">
+                    <Image src="/Logo/LOGO_KK.svg" width={150} height={70} />
+                  </Link>
+                </InAnimated>
+              </Logo>
+            </HeaderColumn>
+            <HeaderColumn justify="flex-end">
+              <InstaWrapper>
+                <Link
+                  id="InstaButton"
+                  href="https://www.instagram.com/kk.visualization/"
+                  passHref
+                >
+                  <ButtonHover
+                    url={"/Icons/Insta.svg"}
+                    hoverUrl={"/Icons/Insta_kol.svg"}
+                  />
+                </Link>
+              </InstaWrapper>
+            </HeaderColumn>
+          </Header>
+          <Container openMenu={openMenu}>{children}</Container>
+          <Footer></Footer>
+          </BackgorundWrapper>
       </Wrapper>
     </>
   );

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledMenu = styled.nav`
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   background: rgb(0, 0, 0);
@@ -10,7 +10,7 @@ export const StyledMenu = styled.nav`
     rgba(0, 0, 0, 1) 0%,
     rgba(179, 179, 179, 0.09567577030812324) 100%
   );
-  height: 710px;
+  height: 100vh;
   text-align: left;
   padding: 2rem;
   position: absolute;
@@ -18,7 +18,8 @@ export const StyledMenu = styled.nav`
   left: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ openMenu }) => openMenu ? 'translateX(0)' : 'translateX(-100%)'};
-  
+  backdrop-filter: blur(0.7em);
+
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
   }
