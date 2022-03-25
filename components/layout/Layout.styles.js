@@ -9,8 +9,10 @@ flex-direction: column;
 
 export const BackgorundWrapper = styled.div`
 flex: 1;
-background-image: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8883928571428571) 80%), url('${props => props.background}');
+background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 93%), url('${props => props.background}');
 background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
 `
 
 
@@ -19,6 +21,7 @@ flex: 1;
 transform: scale(${({openMenu}) => openMenu ? '0.7' : '1'});
 transition: transform 700ms ease;
 filter: blur(${({openMenu}) => openMenu ? '0.5em' : '0em' });
+height: 78vh;
 `
 
 export const MainContent = styled.div`
@@ -51,6 +54,12 @@ transition: transform 500ms ease;
     transform: scale(1.05);
     cursor: pointer;
 }
+`
+export const Footer = styled.div`
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+background-color: black;
+height: 7.8vh;
 `
 
 

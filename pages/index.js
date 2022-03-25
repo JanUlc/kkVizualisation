@@ -1,13 +1,10 @@
 import Image from "next/image";
 import {
-  ImageContent,
-  ImageWrapper,
-  TextContent,
-  TextPosition,
-  TextWrapper,
+  Title,
+  Description,
   Wrapper,
+  TextWrapper,
 } from ".././styles/home.style";
-import DemoCarousel from "../components/animate/DemoCarousel";
 import { request } from "../lib/datocms";
 
 const HOMEPAGE_QUERY = `{
@@ -34,27 +31,9 @@ const Home = ({ data }) => {
 
   return (
     <Wrapper>
-      <ImageWrapper>
-        <ImageContent style={{ width: "70%" }}>
-          <DemoCarousel>
-            {data.home.images.map(({url}) => (
-              <Image
-                src={url}
-                width={"1800px"}
-                height={"900px"}
-                objectFit="cover"
-              />
-            ))}
-          </DemoCarousel>
-        </ImageContent>
-      </ImageWrapper>
       <TextWrapper>
-        <TextPosition>
-          <TextContent>
-            <h1>{data.home.title}</h1>
-            <a>{data.home.description}</a>
-          </TextContent>
-        </TextPosition>
+      <Title>{data.home.title}</Title>
+      <Description>{data.home.description}</Description>
       </TextWrapper>
     </Wrapper>
   );

@@ -59,8 +59,8 @@ const ProjectPage = ({ data }) => {
           {data.images.map(({ url }) => (
             <Image
               src={url}
-              width={"1800px"}
-              height={"1000px"}
+              width={"1400px"}
+              height={"700px"}
               objectFit="cover"
             />
           ))}

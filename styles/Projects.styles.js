@@ -3,13 +3,12 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 display: flex;
-padding: 1em 0;
+margin: 3em 0;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 width: 100vw;
 height: 70vh;
-margin: 2em 0;
 @media only screen and (max-width: 425px) {
   flex-direction: column;
 }

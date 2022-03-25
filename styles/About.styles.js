@@ -13,4 +13,7 @@ background-color: black;
 export const Wrapper = styled.div`
 display: flex;
 flex-direction: row;
+width: 100vw;
+margin: 3em 0;
+justify-content: center;
 `

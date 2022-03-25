@@ -10,7 +10,7 @@ export const StyledMenu = styled.nav`
     rgba(0, 0, 0, 1) 0%,
     rgba(179, 179, 179, 0.09567577030812324) 100%
   );
-  height: 100vh;
+  height: 93.3vh;
   text-align: left;
   padding: 2rem;
   position: absolute;

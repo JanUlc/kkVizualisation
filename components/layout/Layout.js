@@ -8,8 +8,8 @@ import {
   InstaBtn,
   InstaWrapper,
   BackgorundWrapper,
+  Footer
 } from "./Layout.styles";
-import Footer from "../footer/Footer";
 import Image from "next/image";
 import InAnimated from "../animate/InAnimated";
 import { useRouter } from "next/router";
@@ -26,8 +26,12 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const chooseBackgorund = (path) => {
     switch (path) {
+      case "/about" :
+        return "./Pattern/KK_P2.png";   
       case "/contact":
-        return "./Vizualisation/kuchnia2p.jpg";     
+        return "./Vizualisation/kuchnia2p.jpg";
+        case "/" :
+        return "./Vizualisation/H_1.jpg";        
       default:
         return "";
     }
@@ -59,7 +63,15 @@ const Layout = ({ children }) => {
               </Logo>
             </HeaderColumn>
             <HeaderColumn justify="flex-end">
-              <InstaWrapper>
+            </HeaderColumn>
+          </Header>
+          <Container openMenu={openMenu}>{children}</Container>
+          <Footer>
+            <HeaderColumn>
+            <p>kk.vizualisation</p>
+            </HeaderColumn>
+            <HeaderColumn justify="flex-end">
+            <InstaWrapper>
                 <Link
                   id="InstaButton"
                   href="https://www.instagram.com/kk.visualization/"
@@ -71,10 +83,20 @@ const Layout = ({ children }) => {
                   />
                 </Link>
               </InstaWrapper>
+              <InstaWrapper>
+                <Link
+                  id="FacebookButton"
+                  href="https://www.facebook.com/KKVisualization-108689925096420"
+                  passHref
+                >
+                  <ButtonHover
+                    url={"/Icons/FB.svg"}
+                    hoverUrl={"/Icons/FB_kol.svg"}
+                  />
+                </Link>
+              </InstaWrapper>
             </HeaderColumn>
-          </Header>
-          <Container openMenu={openMenu}>{children}</Container>
-          <Footer></Footer>
+            </ Footer>
           </BackgorundWrapper>
       </Wrapper>
     </>

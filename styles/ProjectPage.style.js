@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 display: flex;
+flex-direction: row;
 width: 100vw;
+margin: 3em 0;
+justify-content: center;
 `
 
 export const TextWrapper = styled.div`
-display: flex;
+flex:1;
 flex-direction: column;
 width: 30vw;
 margin: 2em 2em;
@@ -18,13 +21,13 @@ flex-direction: column;
 `
 
 export const ImageWrapper = styled.div`
-display: flex;
-width: 60vw;
+width: 65vw;
 justify-content: flex-end;
-margin: 2em 0 0 0;
+margin: 3em 0 0 0;
 `
 
 export const Title = styled.div`
+flex: 1;
 font-family: MontserratAltB, sans-serif;
 font-size: 7em;
 `

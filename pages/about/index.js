@@ -26,17 +26,7 @@ export async function getStaticProps() {
 export default function About({ data }) {
   return (
     <Wrapper>
-      <TextWrapper>
-        <h1>{data.about.description}</h1>
-      </TextWrapper>
-      <LogoWrapper>
-        <Image
-          src={data.about.logo.url}
-          width="1000px"
-          height="1000px"
-          objectFit="cover"
-        />
-      </LogoWrapper>
+      
     </Wrapper>
   );
 }
