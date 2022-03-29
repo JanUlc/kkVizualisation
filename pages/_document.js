@@ -25,12 +25,6 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <title>Kamila Zatylna Visualization</title>
-          <link
-            rel="preload"
-            href="/fonts/MontserratAlternates/MontserratAlternates-Thin.ttf"
-            as="font"
-            crossOrigin=""
-          />
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
         </Head>

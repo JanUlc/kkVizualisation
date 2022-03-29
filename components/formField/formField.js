@@ -10,6 +10,7 @@ export const StyledInput = styled.input`
   padding: 0.7em 0.7em;
   font-size: 1em;
   background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
   border: 0.15em solid white;
   ::placeholder {
     color: black;

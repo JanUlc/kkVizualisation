@@ -60,7 +60,7 @@ const ProjectPage = ({ data }) => {
             <Image
               src={url}
               width={"1400px"}
-              height={"700px"}
+              height={"800px"}
               objectFit="cover"
             />
           ))}

@@ -1,36 +1,27 @@
 import styled from "styled-components";
 
-
 export const Wrapper = styled.main`
-min-height: 100vh;
+width: 100vw;
+height: 100vh;
 display: flex;
 flex-direction: column;
 `
 
 export const BackgorundWrapper = styled.div`
-flex: 1;
+
 background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 93%), url('${props => props.background}');
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 `
 
-
 export const Container = styled.div.attrs({ id: 'page-wrap' })`
-flex: 1;
+
 transform: scale(${({openMenu}) => openMenu ? '0.7' : '1'});
 transition: transform 700ms ease;
 filter: blur(${({openMenu}) => openMenu ? '0.5em' : '0em' });
 height: 78vh;
 `
-
-export const MainContent = styled.div`
-display: flex;
-max-width: 1440px; 
-flex: 1;
-margin: 0 auto;
-flex-direction: row;
-`;
 
 export const Header = styled.header`
 display: grid;

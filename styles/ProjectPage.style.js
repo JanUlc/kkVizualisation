@@ -18,12 +18,13 @@ margin: 2em 2em;
 export const HeaderWrap = styled.div`
 display: flex;
 flex-direction: column;
+margin-bottom: 7em;
 `
 
 export const ImageWrapper = styled.div`
 width: 65vw;
 justify-content: flex-end;
-margin: 3em 0 0 0;
+margin-right: 2em;
 `
 
 export const Title = styled.div`
@@ -34,6 +35,7 @@ font-size: 7em;
 
 export const Description = styled.div`
 font-family: MontserratAltReg, sans-serif;
+text-align: justify;
 `
 
 
