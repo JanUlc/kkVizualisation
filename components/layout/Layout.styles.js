@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
-width: 100vw;
 height: 100vh;
 display: flex;
 flex-direction: column;
 `
 
 export const BackgorundWrapper = styled.div`
-
+display: flex;
+flex:1;
+flex-direction: column;
 background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 93%), url('${props => props.background}');
 background-position: center;
 background-repeat: no-repeat;
@@ -16,16 +17,17 @@ background-size: cover;
 `
 
 export const Container = styled.div.attrs({ id: 'page-wrap' })`
-
+flex:1;
 transform: scale(${({openMenu}) => openMenu ? '0.7' : '1'});
 transition: transform 700ms ease;
 filter: blur(${({openMenu}) => openMenu ? '0.5em' : '0em' });
-height: 78vh;
+padding: 0.5rem;
 `
 
 export const Header = styled.header`
-display: grid;
-grid-template-columns: repeat(3, 1fr);
+flex:0 0 100px;
+display: flex;
+align-items: center;
 `;
 
 export const InstaWrapper = styled.div`
@@ -35,9 +37,8 @@ margin: 0em 1.5em;
 `
 export const HeaderColumn = styled.div`
 display: flex;
-align-items: center;
+flex:1;
 justify-content: ${ props => props.justify };
-padding: 0.5em 0em;
 `
 export const Logo = styled.div`
 transition: transform 500ms ease;
@@ -47,10 +48,11 @@ transition: transform 500ms ease;
 }
 `
 export const Footer = styled.div`
-display: grid;
-grid-template-columns: repeat(2, 1fr);
+flex:0 0 70px;
+display: flex;
 background-color: black;
-height: 7.8vh;
+align-items: center;
+padding: 0.5rem;
 `
 
 

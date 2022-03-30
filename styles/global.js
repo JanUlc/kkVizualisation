@@ -28,7 +28,6 @@ export const GlobalStyles = createGlobalStyle`
     
   }
   body {
-    display: flex;
     background: black;
     color: white;
   }

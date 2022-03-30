@@ -20,12 +20,14 @@ export const StyledMenu = styled.nav`
   transform: ${({ openMenu }) => openMenu ? 'translateX(0)' : 'translateX(-100%)'};
   backdrop-filter: blur(0.7em);
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    width: 100%;
+  @media (max-width: 1024px) {
+    background-color: black;
+    width: 100vw;
+    z-index: 100;
   }
 
   a {
-    font-family: MontserratAltReg, sans-serif;
+    font-family: MontserratdAltReg, sans-serif;
     font-size: 2rem;
     padding: 2rem 0;
     font-weight: bold;
