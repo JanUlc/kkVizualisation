@@ -42,16 +42,15 @@ export async function getServerSideProps(context) {
 };
 
 const ProjectPage = ({ data }) => {
-  console.log(data);
   return (
     <Wrapper>
       <TextWrapper>
         <HeaderWrap>
-        <Title>{data.title}</Title>
-        <Style>{data.style}</Style>
+        <Title><h1>{data.title}</h1></Title>
+        <Style><p>{data.style}</p></Style>
         </HeaderWrap>
         <Description>
-          {data.description}
+          <p>{data.description}</p>
         </Description>
       </TextWrapper>
       <ImageWrapper>

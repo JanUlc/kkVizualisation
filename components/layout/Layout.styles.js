@@ -21,7 +21,7 @@ flex:1;
 transform: scale(${({openMenu}) => openMenu ? '0.7' : '1'});
 transition: transform 700ms ease;
 filter: blur(${({openMenu}) => openMenu ? '0.5em' : '0em' });
-padding: 0.5rem;
+padding: 0.5em;
 `
 
 export const Header = styled.header`
@@ -48,7 +48,7 @@ transition: transform 500ms ease;
 }
 `
 export const Footer = styled.div`
-flex:0 0 70px;
+flex:0 0 50px;
 display: flex;
 background-color: black;
 align-items: center;

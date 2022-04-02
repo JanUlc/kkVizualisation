@@ -32,8 +32,8 @@ const Home = ({ data }) => {
   return (
     <Wrapper>
       <TextWrapper>
-      <Title>{data.home.title}</Title>
-      <Description>{data.home.description}</Description>
+      <Title><h1>{data.home.title}</h1></Title>
+      <Description><p>{data.home.description}</p></Description>
       </TextWrapper>
     </Wrapper>
   );

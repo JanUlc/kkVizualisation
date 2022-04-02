@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 const DemoCarousel = ({children}) =>  {
 
         return (
-            <Carousel showArrows={false} autoPlay infiniteLoop>
+            <Carousel showArrows={false} showThumbs={false} autoPlay infiniteLoop>
                {children}
             </Carousel>
         );

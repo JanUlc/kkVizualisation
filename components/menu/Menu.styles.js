@@ -1,50 +1,56 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(0, 0, 0);
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: absolute;
+  text-align: left;
+  background: black;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+  transform: ${({ openMenu }) =>
+    openMenu ? "translateX(0)" : "translateX(-100%)"};
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(179, 179, 179, 0.09567577030812324) 100%
+    rgba(18, 18, 18, 0.3) 100%
   );
-  height: 93.3vh;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
-  transform: ${({ openMenu }) => openMenu ? 'translateX(0)' : 'translateX(-100%)'};
-  backdrop-filter: blur(0.7em);
-
-  @media (max-width: 1024px) {
-    background-color: black;
-    width: 100vw;
-    z-index: 100;
-  }
+  backdrop-filter: blur(0.8em);
 
   a {
-    font-family: MontserratdAltReg, sans-serif;
-    font-size: 2rem;
-    padding: 2rem 0;
+    font-family: RobotoLight;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    padding-bottom: 1.5em;
+    padding-left: 0.3em;
     font-weight: bold;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.5em;
     color: white;
     text-decoration: none;
     transition: color 0.3s linear;
-    
-    @media (max-width: ${({ theme }) => theme.mobile}) {
-      font-size: 1.5rem;
+
+    @media (max-width: 425px) {
+      font-size: 1.3em;
       text-align: center;
+      padding: 1em 0;
+    }
+    @media (min-width: 2560px) {
+      font-size: 1.5em;
+      padding-bottom: 2em;
+      padding-left: 0.5em;
     }
 
     &:hover {
-      color: #666666 ;
+      color: #666666;
+    }
   }
-  }
-
-
 `;

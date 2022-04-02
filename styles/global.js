@@ -20,6 +20,22 @@ export const GlobalStyles = createGlobalStyle`
   font-display: swap;
 }
 
+@font-face {
+  font-family: "RobotoLight";
+  src: url("/fonts/Roboto/Roboto-Light.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("/fonts/Roboto/Roboto-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
   html, body {
     margin: 0;
     padding: 0;
@@ -33,12 +49,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-  font-family: MontserratAltB;
+  font-family: RobotoRegular;
+  margin-top:0.2em;
+  margin-bottom: 0.2em;
 }
-
 p{
-  font-family: MontserratAltReg, sans-serif;
-
+  font-family: RobotoLight, sans-serif;
+  margin: 0.3em;
+  justify-content: justify;
 }
 
 a {

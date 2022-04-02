@@ -13,13 +13,14 @@ import {
 import Image from "next/image";
 import InAnimated from "../animate/InAnimated";
 import { useRouter } from "next/router";
-import React from "react";
+import React, {useEffect} from "react";
 import { useState, useRef } from "react";
 import { useOnClickOutside } from "../../hooks/hooks";
 import Burger from "../burger/Burger";
 import Menu from "../menu/Menu";
 import ButtonHover from "../ButtonHover/ButtonHover";
 import Link from "next/link";
+
 
 const Layout = ({ children }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -40,6 +41,13 @@ const Layout = ({ children }) => {
   const node = useRef();
   useOnClickOutside(node, () => setOpenMenu(false));
 
+  useEffect( ()=> { 
+    console.log("useEffect")
+    setOpenMenu(false)
+  }, [router.path])
+    
+
+
   return (
     <>
       <Wrapper>
@@ -48,7 +56,7 @@ const Layout = ({ children }) => {
         >
           <Header>
             <HeaderColumn>
-              <div ref={node}>
+            <div ref={node}>
                 <Burger openMenu={openMenu} setOpenMenu={setOpenMenu} />
                 <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
               </div>
