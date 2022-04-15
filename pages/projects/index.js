@@ -1,4 +1,9 @@
-import { Wrapper, ColWrapper, TextOnImage, ImageWrapper } from "../../styles/Projects.styles";
+import {
+  Wrapper,
+  ColWrapper,
+  TextOnImage,
+  ImageWrapper,
+} from "../../styles/Projects.styles";
 import Image from "next/image";
 import { useState } from "react";
 import { request } from "../../lib/datocms";
@@ -44,18 +49,19 @@ export default function Projects({ data }) {
         {data.allProjects
           .reverse()
           .map(({ id, title, images = null }, index) => (
-            <Link href={`/projects/${encodeURIComponent(id)}`}>
+            <Link href={`/projects/${encodeURIComponent(id)}`} passHref key={id}>
               <ColWrapper
                 onMouseEnter={() => setActiveColumn(index)}
                 blured={shouldBlur(index)}
                 onMouseLeave={() => setActiveColumn(5)}
-                key={id}
               >
                 <Image
                   src={images[0].url}
                   height={"1200px"}
                   width={"600px"}
                   objectFit="cover"
+                  
+                  alt="OneOfVizualisation"
                 />
                 <TextOnImage>{title}</TextOnImage>
               </ColWrapper>
@@ -65,19 +71,19 @@ export default function Projects({ data }) {
       <MediaQuery maxWidth={1023}>
         <DemoCarousel>
           {data.allProjects.map(({ id, images = null }) => (
-            <Link href={`/projects/${encodeURIComponent(id)}`}>
-              <ImageWrapper key={id}>
-              <Image
-                src={images[0].url}
-                width={"2560px"}
-                height={"1600px"}
-                objectFit="cover"
-              />
+            <Link href={`/projects/${encodeURIComponent(id)}`} passHref key={id}>
+              <ImageWrapper>
+                <Image
+                  src={images[0].url}
+                  width={"2560px"}
+                  height={"1600px"}
+                  objectFit="cover"
+                  alt="OneOfVizualisation"
+                />
               </ImageWrapper>
             </Link>
           ))}
         </DemoCarousel>
-
       </MediaQuery>
     </Wrapper>
   );
