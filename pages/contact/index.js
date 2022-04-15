@@ -1,8 +1,12 @@
 import FormContact from "../../components/formContact/FormContact";
-import { TextWrapper, Title, Wrapper } from "../../styles/Contact.styles";
+import {
+  FormWrapper,
+  TextWrapper,
+  Title,
+  Wrapper,
+  Description,
+} from "../../styles/Contact.styles";
 import { request } from "../../lib/datocms";
-import { Description } from "../../styles/About.styles";
-
 const PROJECT_QUERY = `{
     allProjects
     {
@@ -25,19 +29,25 @@ export async function getStaticProps() {
   };
 }
 
-const Contact = ({data}) => {
+const Contact = ({ data }) => {
   return (
     <Wrapper>
       <TextWrapper>
-        <Title><h1>Neque porro quisquam est qui dolorem</h1></Title>
-        <Description><p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi risus
-          nunc, sollicitudin eget consectetur sodales, vulputate sagittis nisl.
-          Duis pharetra, est nec maximus rutrum, odio ipsum fringilla est, ac
-          laoreet ligula erat et tellus.
-        </p></Description>
+        <Title>
+          <h1>Neque porro quisquam est qui dolorem</h1>
+        </Title>
+        <Description>
+          
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi risus
+            nunc, sollicitudin eget consectetur sodales, vulputate sagittis
+            nisl. Duis pharetra, est nec maximus rutrum, odio ipsum fringilla
+            est, ac laoreet ligula erat et tellus.
+          
+        </Description>
       </TextWrapper>
-      <FormContact />
+      <FormWrapper>
+        <FormContact />
+      </FormWrapper>
     </Wrapper>
   );
 };

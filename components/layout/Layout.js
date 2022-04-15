@@ -42,12 +42,9 @@ const Layout = ({ children }) => {
   useOnClickOutside(node, () => setOpenMenu(false));
 
   useEffect( ()=> { 
-    console.log("useEffect")
     setOpenMenu(false)
   }, [router.path])
     
-
-
   return (
     <>
       <Wrapper>
@@ -73,7 +70,7 @@ const Layout = ({ children }) => {
             <HeaderColumn justify="flex-end">
             </HeaderColumn>
           </Header>
-          <Container openMenu={openMenu}>{children}</Container>
+          <Container openMenu={openMenu} setOpenMenu={setOpenMenu}>{children}</Container>
           <Footer>
             <HeaderColumn>
             <p>kk.vizualisation</p>

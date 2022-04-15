@@ -55,16 +55,16 @@ const ProjectPage = ({ data }) => {
       </TextWrapper>
       <ImageWrapper>
         <DemoCarousel>
-          {data.images.map(({ url }) => (
+          {data.images.map(({ url}) => (
             <Image
               src={url}
-              width={"1400px"}
-              height={"800px"}
+              width={"2460px"}
+              height={"1600px"}
               objectFit="cover"
             />
           ))}
         </DemoCarousel>
-      </ImageWrapper>
+        </ImageWrapper>
     </Wrapper>
   );
 };

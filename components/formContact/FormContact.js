@@ -37,7 +37,6 @@ const FormContact = () => {
         {...register("name", { required: true, minLength: 2, maxLength: 40 })}
       />
       {errors.name && "Name is required"}
-      {console.log({errors})}
       <FormField
         name="email"
         type="email"

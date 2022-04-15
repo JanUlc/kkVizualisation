@@ -30,7 +30,7 @@ export const StyledMenu = styled.nav`
     font-family: RobotoLight;
     font-size: 1.3em;
     text-transform: uppercase;
-    padding-bottom: 1.5em;
+    padding-bottom: 2em;
     padding-left: 0.3em;
     font-weight: bold;
     letter-spacing: 0.5em;
@@ -45,7 +45,7 @@ export const StyledMenu = styled.nav`
     }
     @media (min-width: 2560px) {
       font-size: 1.5em;
-      padding-bottom: 2em;
+      padding-bottom: 3em;
       padding-left: 0.5em;
     }
 

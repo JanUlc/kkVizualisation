@@ -27,7 +27,6 @@ export async function getStaticProps() {
 }
 
 const Home = ({ data }) => {
-  console.log(data.home.images.url);
 
   return (
     <Wrapper>

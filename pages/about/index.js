@@ -37,8 +37,8 @@ export default function About({ data }) {
     <Wrapper>
       <TextWrapper>
         <NameWrapper>
-          <Name justify="flex-start"><h1>Lorem</h1></Name>
-          <Name justify="flex-end"><h1>Ipsum</h1></Name>
+          <Name justify="flex-start"><h1>LOREM</h1></Name>
+          <Name justify="flex-end"><h1>IPSUM</h1></Name>
         </NameWrapper>
         <DescriptionWrapper>
           <Description>
@@ -47,7 +47,7 @@ export default function About({ data }) {
         </DescriptionWrapper>
       </TextWrapper>
       <ImageWrapper>
-            <Image src="/Pattern/Face.jpg" height="600px" width="450px" />
+            <Image src="/Pattern/Face.jpg" height="750px" width="600px" />
       </ImageWrapper>
     </Wrapper>
   );
