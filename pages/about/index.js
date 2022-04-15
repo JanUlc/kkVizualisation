@@ -47,7 +47,7 @@ export default function About({ data }) {
         </DescriptionWrapper>
       </TextWrapper>
       <ImageWrapper>
-            <Image src="/Pattern/Face.jpg" height="750px" width="600px" />
+            <Image src="/Pattern/Face.jpg" height="750px" width="600px" alt="Face"/>
       </ImageWrapper>
     </Wrapper>
   );

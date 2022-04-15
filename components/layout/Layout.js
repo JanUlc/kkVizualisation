@@ -61,8 +61,8 @@ const Layout = ({ children }) => {
             <HeaderColumn justify="center">
               <Logo>
                 <InAnimated>
-                  <Link id="logo" href="/">
-                    <Image src="/Logo/LOGO_KK.svg" width={150} height={70} />
+                  <Link id="logo" href="/" passHref>
+                    <Image src="/Logo/LOGO_KK.svg" width={150} height={70} alt="Logo" />
                   </Link>
                 </InAnimated>
               </Logo>

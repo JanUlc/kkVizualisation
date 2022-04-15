@@ -56,7 +56,6 @@ export const GlobalStyles = createGlobalStyle`
 p{
   font-family: RobotoLight, sans-serif;
   margin: 0.3em;
-  justify-content: justify;
 }
 
 a {
