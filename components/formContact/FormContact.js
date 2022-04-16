@@ -1,17 +1,17 @@
 import React from "react";
+import { Button, WrapperForm } from "./FormContact.styles";
 import FormField from "../formField/FormField";
-import {
-  Button,
-  WrapperForm,
-} from "./FormContact.styles";
 
 import { useForm } from "react-hook-form";
 
 const FormContact = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const handleSubmitForm = async (data) => {
-    
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/form";
 
@@ -23,11 +23,11 @@ const FormContact = () => {
       body: JSONdata,
     };
 
-    const response = await fetch(endpoint, options)
+    const response = await fetch(endpoint, options);
 
-    const result = await response.json()
+    const result = await response.json();
     alert(`Is this your name and email: ${result.data}`);
-  }
+  };
 
   return (
     <WrapperForm onSubmit={handleSubmit(handleSubmitForm)}>
@@ -41,12 +41,16 @@ const FormContact = () => {
         name="email"
         type="email"
         placeholder="Email"
-        {...register("email", { required: true ,minLength: 7, pattern: '/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i' })}
+        {...register("email", {
+          required: true,
+          minLength: 7,
+          pattern: "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i",
+        })}
       />
       {errors.email && "Email is required"}
       <Button type="submit">Send</Button>
     </WrapperForm>
   );
-}
+};
 
 export default FormContact;
