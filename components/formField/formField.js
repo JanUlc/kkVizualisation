@@ -16,5 +16,5 @@ const FormField = React.forwardRef(
     )
   }
 );
-
+FormField.displayName = 'FormField';
 export default FormField;

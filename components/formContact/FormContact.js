@@ -1,5 +1,5 @@
 import React from "react";
-import FormField from "../formField/formField";
+import FormField from "../formField/FormField";
 import {
   Button,
   WrapperForm,
