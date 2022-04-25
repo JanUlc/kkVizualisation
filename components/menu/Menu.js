@@ -3,7 +3,7 @@ import { StyledMenu } from "./Menu.styles";
 import Link from "next/link";
 
 const MenuLink = ({ setOpenMenu, children, ...props }) => (
-  <Link {...props}>{children}</Link>
+  <Link {...props} >{children}</Link>
 );
 
 const Menu = ({ openMenu, setOpenMenu }) => {

@@ -3,6 +3,7 @@ import { Button, WrapperForm } from "./FormContact.styles";
 import FormField from "../formField/FormField";
 
 import { useForm } from "react-hook-form";
+const ref = React.createRef();
 
 const FormContact = () => {
   const {
@@ -32,12 +33,14 @@ const FormContact = () => {
   return (
     <WrapperForm onSubmit={handleSubmit(handleSubmitForm)}>
       <FormField
+      ref={ref}
         name="name"
         placeholder="Name"
         {...register("name", { required: true, minLength: 2, maxLength: 40 })}
       />
       {errors.name && "Name is required"}
       <FormField
+      ref={ref}
         name="email"
         type="email"
         placeholder="Email"

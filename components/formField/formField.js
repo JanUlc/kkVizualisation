@@ -1,8 +1,7 @@
 import React from "react";
-import {Wrapper, StyledInput} from './FormField.style';
+import { Wrapper, StyledInput } from "./FormField.style";
 
-export default function FormField() {
-  return (React.forwardRef(
+ const FormField = React.forwardRef(
     ({ onChange, name, id, placeholder, ...props }, ref) => {
       return (
         <Wrapper>
@@ -14,7 +13,9 @@ export default function FormField() {
             placeholder={placeholder}
           />
         </Wrapper>
-      )
+      );
     }
-  ))
-} ;
+  );
+
+
+export default FormField;
