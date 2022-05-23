@@ -29,14 +29,14 @@ export default function handler(req, res) {
     from: "kvizualisation@gmail.com",
     to: 'kvizualisation@gmail.com',
     subject: "Sending Email using Node.js[nodemailer]",
-    text: body.name + body.email + " That was easy!",
+    text: body.name + " " + body.email + " That was easy!",
   };
 
   const clientNotification = {
     from: "kvizualisation@gmail.com",
     to: body.eamil,
     subject: "Sending Email using Node.js[nodemailer]",
-    text: body.name + body.email + " That was easy!",
+    text: body.name + " " + body.email + " That was easy!",
   };
 
   const mailsToSend = [myNotification, clientNotification]
