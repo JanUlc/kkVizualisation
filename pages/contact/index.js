@@ -1,4 +1,4 @@
-import FormContact from "../../components/formContact/FormContact";
+
 import {
   FormWrapper,
   TextWrapper,
@@ -46,7 +46,7 @@ const Contact = ({ data }) => {
         </Description>
       </TextWrapper>
       <FormWrapper>
-        <FormContact />
+        
       </FormWrapper>
     </Wrapper>
   );
