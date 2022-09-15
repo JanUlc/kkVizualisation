@@ -47,7 +47,7 @@ export default function Projects({ data }) {
     <Wrapper>
       <MediaQuery minWidth={1024}>
         {data.allProjects
-          .reverse()
+          .sort((a, b) => a.id - b.id)
           .map(({ id, title, images = null }, index) => (
             <Link
               href={`/projects/${encodeURIComponent(id)}`}
