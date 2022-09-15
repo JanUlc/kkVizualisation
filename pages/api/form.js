@@ -1,4 +1,3 @@
-
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 
@@ -24,10 +23,10 @@ export default function handler(req, res) {
       },
     })
   );
-
+  console.log();
   const myNotification = {
     from: "kvizualisation@gmail.com",
-    to: 'kvizualisation@gmail.com',
+    to: "kvizualisation@gmail.com",
     subject: "Sending Email using Node.js[nodemailer]",
     text: body.name + " " + body.email + " That was easy!",
   };
@@ -39,16 +38,17 @@ export default function handler(req, res) {
     text: body.name + " " + body.email + " That was easy!",
   };
 
-  const mailsToSend = [myNotification, clientNotification]
-  mailsToSend.map(mail => transporter.sendMail(mail, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  })) 
+  const mailsToSend = [myNotification, clientNotification];
+  mailsToSend.map((mail) =>
+    transporter.sendMail(mail, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    })
+  );
 
-  
   // Found the name.
   res.json({ data: `${body.name} ${body.email}` });
 }
