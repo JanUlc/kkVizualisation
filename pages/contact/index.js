@@ -1,4 +1,3 @@
-
 import {
   FormWrapper,
   TextWrapper,
@@ -7,6 +6,7 @@ import {
   Description,
 } from "../../styles/Contact.styles";
 import { request } from "../../lib/datocms";
+import FormContact from "../../components/formContact/FormContact";
 const PROJECT_QUERY = `{
     allProjects
     {
@@ -37,16 +37,14 @@ const Contact = ({ data }) => {
           <h1>Neque porro quisquam est qui dolorem</h1>
         </Title>
         <Description>
-          
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi risus
-            nunc, sollicitudin eget consectetur sodales, vulputate sagittis
-            nisl. Duis pharetra, est nec maximus rutrum, odio ipsum fringilla
-            est, ac laoreet ligula erat et tellus.
-          
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi risus
+          nunc, sollicitudin eget consectetur sodales, vulputate sagittis nisl.
+          Duis pharetra, est nec maximus rutrum, odio ipsum fringilla est, ac
+          laoreet ligula erat et tellus.
         </Description>
       </TextWrapper>
       <FormWrapper>
-        
+        <FormContact />
       </FormWrapper>
     </Wrapper>
   );
