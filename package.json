@@ -9,11 +9,12 @@
   },
   "dependencies": {
     "downshift": "^6.1.7",
+    "googleapis": "^108.0.0",
     "graphql": "^16.3.0",
     "graphql-request": "^4.0.0",
     "loadash": "^1.0.0",
     "next": "^12.3.1",
-    "nodemailer": "^6.7.2",
+    "nodemailer": "^6.7.8",
     "nodemailer-smtp-transport": "^2.7.4",
     "react": "^17.0.2",
     "react-burger-menu": "^2.9.2",
@@ -25,7 +26,14 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "dotenv": "^16.0.2",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.7"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }

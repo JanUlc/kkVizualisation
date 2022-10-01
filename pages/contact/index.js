@@ -7,6 +7,7 @@ import {
 } from "../../styles/Contact.styles";
 import { request } from "../../lib/datocms";
 import FormContact from "../../components/formContact/FormContact";
+
 const PROJECT_QUERY = `{
     allProjects
     {
